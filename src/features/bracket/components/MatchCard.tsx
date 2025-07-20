@@ -40,6 +40,8 @@ const MatchCard = ({
     return participantId !== null && hoveredParticipant === participantId;
   };
 
+  const isOnlyOneChild = span == totalRows
+
   return (
     <div
       style={{
@@ -151,13 +153,13 @@ const MatchCard = ({
       </div>
 
       {/* connector */}
-      {hasRightConnector && isUp && (
+      {hasRightConnector && isUp && !isOnlyOneChild && (
         <div
           style={{ top: isUp ? "0" : "auto" }}
           className="border-border absolute left-full h-1/2 w-4 border-r-2 border-b-2"
         ></div>
       )}
-      {hasRightConnector && !isUp && (
+      {hasRightConnector && !isUp && !isOnlyOneChild && (
         <div
           style={{ bottom: !isUp ? "0" : "auto" }}
           className="border-border absolute left-full h-1/2 w-4 border-t-2 border-r-2"

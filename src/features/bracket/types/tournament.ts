@@ -141,6 +141,7 @@ export type Participant = {
 
 export type Match = {
   isHidden?: boolean | null
+  isCollapse?: boolean | null
   id?: number;
   tournament_id?: number;
   state?: 'open' | 'pending' | 'complete';

@@ -23,6 +23,8 @@ const DoubleElimination = ({ data }: { data: TournamentResponse }) => {
     return "load";
   }
 
+  console.log(roundChildCount);
+
   return (
     <div className="flex gap-8 overflow-x-auto p-5">
       {Object.keys(groupedMatchesUpper)
@@ -38,9 +40,13 @@ const DoubleElimination = ({ data }: { data: TournamentResponse }) => {
 
           return (
             <div key={round} className="flex flex-col">
-              <div className="bg-card border-border flex min-w-[280px] items-center justify-center rounded-sm border-2 py-3 font-semibold">
-                {label}
-              </div>
+              {groupedMatchesUpper[round][0].isCollapse == null ? (
+                <div className="bg-card border-border flex min-w-[280px] items-center justify-center rounded-sm border-2 py-3 font-semibold">
+                  {label}
+                </div>
+              ) : (
+                <div className="bg-card border-border flex h-[52px] min-w-[280px] items-center justify-center rounded-sm border-2 py-3 font-semibold opacity-0"></div>
+              )}
 
               <div
                 style={{

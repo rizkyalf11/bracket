@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { RotateCcw, SquarePen } from "lucide-react";
-import { Match, Participant } from "../bracket/types/tournament";
+import { Match, Participant } from "../types/tournament";
 
 type BracketMatchProps = {
   match: Match;
